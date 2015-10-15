@@ -8,6 +8,7 @@ buildscript {
         }
     }
     dependencies {
+        //classpath "com.ids:ratpack-gradle-plugin:28" -- would 26 work?
         classpath "com.ids:ratpack-gradle-plugin:28"
     }
 }

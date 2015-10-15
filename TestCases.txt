@@ -1,0 +1,35 @@
+For each handler:
+-- No post data given.
+http post :5700/:eyedocmd/Minesweeper/loss -v
+
+-- String that isn't JSON.
+echo 'John' | http post :5700/:eyedocmd/Minesweeper/loss
+
+-- JSON string that isn't a map (key-value pair(s)).
+echo '"text": { "data": "Click Here",  "size": 36, "style": "bold" }' | http post :5700/:eyedocmd/Minesweeper/loss
+echo '[1, 2, 3]' | http post :5700/:eyedocmd/Minesweeper/loss
+
+-- JSON string that's a map that doesn't contain "name".
+echo '{ "style": "bold" }' | http post :5700/:eyedocmd/Minesweeper/loss
+
+-- JSON string that's a map that contains "name", but "name" is blank.
+echo '{ "name": "" }' | http post :5700/:eyedocmd/Minesweeper/loss
+
+For WinHandler:
+-- JSON string doesn't contain the key "score".
+echo '{ "name": "Bob", "whynot" : "just cuz" }' | http post :5700/:eyedocmd/Minesweeper/win
+
+-- JSON string contains "score" but it's not an integer.
+echo '{ "name": "Bob", "score" : "10a" }' | http post :5700/:eyedocmd/Minesweeper/win
+
+-- JSON string contains "score" but it's a rational number & not an integer.
+echo '{ "name": "Bob", "score" : "10.0" }' | http post :5700/:eyedocmd/Minesweeper/win
+
+For each handler:
+
+-- (with valid JSON name/value pair): new player name
+(N.B. server assumes client will case data correctly, but if a player puts in "John D" one time
+and "John D." another, I think they'll have 2 different records. However, "john D." and "John D."
+should have one record IF they go thru client processing.)
+
+-- (with valid JSON name/value pair): existing player name

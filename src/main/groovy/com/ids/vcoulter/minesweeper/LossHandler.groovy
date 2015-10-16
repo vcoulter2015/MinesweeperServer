@@ -40,7 +40,6 @@ class LossHandler extends IdsHandler {
                 if (Common.getVerboseLogging()) log.debug("In LossHandler: new player")
                 queryResult = Common.addNewPlayer(sql, playerName, 0, 0, 1, 0)
                 // TODO - queryResult should be true or 1. What if it's not?
-                if (Common.getVerboseLogging()) log.debug("In LossHandler: new player query result: '" + queryResult.toString() + "'")
             } else {
                 // playerRow is an object of the class groovy.sql.GroovyRowResult
                 //  (I know because I had it print it out in debugging), which implements Map.

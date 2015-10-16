@@ -10,14 +10,14 @@ import groovy.sql.Sql
  */
 class Common {
 
-    private static boolean verboseLog = true;
+    private static boolean verboseLog = false;
 
     static boolean getVerboseLogging() {
         return verboseLog
     }
 
     static void setVerboseLogging(boolean verboseLogOn) {
-        Common.verboseLog = verboseLogOn
+        verboseLog = verboseLogOn
     }
 /**
      * Purpose: Given the map, returns a name. Throws IdsClientFailure

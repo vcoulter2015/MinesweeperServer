@@ -33,3 +33,18 @@ and "John D." another, I think they'll have 2 different records. However, "john 
 should have one record IF they go thru client processing.)
 
 -- (with valid JSON name/value pair): existing player name
+
+On the client:
+
+Reveal, if pressed when there is already a win/lose/draw message, doesn't record a draw.
+Likewise for Restart.
+
+Usernames to try:
+Assume that the player'd never type in a name longer than 35.
+Assume that the playerd never type
+| and some people type very 'silly'   stuff
+And some people type very silly
+'^^@@"
+ | | | | |
+  1                              /\/\/\/\
+ would a player ever type in a ** long name
